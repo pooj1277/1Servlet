@@ -18,8 +18,8 @@ import jakarta.servlet.http.HttpServletResponse;
 		urlPatterns = {"/LoginServlet"},
 
 		initParams = {
-				@WebInitParam(name = "user", value = "Pooja"),
-				@WebInitParam(name = "pwd", value = "PAvhad@7")
+				@WebInitParam(name = "user", value = "^[A-Z]{1}[a-z]{2,}$"),
+				@WebInitParam(name = "pwd", value = "^[a-z A-z 0-9](?=.*[@#$%]){8,}$")
 		})
 
 
