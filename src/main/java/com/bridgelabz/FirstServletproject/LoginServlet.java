@@ -33,14 +33,15 @@ public class LoginServlet extends HttpServlet {
 		String userID = getServletConfig().getInitParameter("user"); 
 		String password = getServletConfig().getInitParameter("pwd");
 
-		if(userID.equals(user) && password.equals(pwd)) { 
+		if(Pattern.matches(userID,user) && Pattern.matches(password,pwd)) { 
 			request.setAttribute("user", user);
 			request.getRequestDispatcher("LoginSuccess.jsp").forward(request, response);
 		} else {
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/Login.html");
-			PrintWriter out= response.getWriter();
-			out.println("<font color=red>Either user name or password is wrong.</font>"); 
+			PrintWriter writer= response.getWriter();
+			writer.println("<font color=red>Either user name or password is wrong.</font>"); 
 			rd. include (request, response);
+			writer.close();
 		}
 	}
 }
