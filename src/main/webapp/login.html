@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+							"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<title>Login Page</title>
+	<meta charset="US-ASCII">
+	
+</head>
+<body>
+<form action="LoginServlet" method="post"> 
+	Username: <input type="text" name="user" pattern="^[A-Z]{1}[a-zA-Z]{2,}" title = "Must contain first letter capital">
+	<br>
+	Password: <input type="password"  name="pwd" pattern = "^(?=.*[A-Z])(?=.*\\d)(?=.*\\W)[a-zA-Z0-9\\@\\_\\-\\+\\#\\*]{8,}$" title= "Must contain 8 characters, atleast one capital letter, one digit and one special character">
+	<br>
+	<input type="submit" value="Login">
+</form>
+</body>
+</html>
